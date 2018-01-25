@@ -2,9 +2,9 @@
 Suite Setup       Start webapp and open browser
 Suite Teardown    Stop webapp and close all browsers
 Variables         ../resources/config.py    # this is the only place where we have to hard-code a path;    # when config.py is loaded it will alter the path to include    # the resources folder.
-Library           PageObjectLibrary
-Library           Selenium2Library
+Library           SeleniumLibraryExtension
 Library           Process
+Library           PageObjectLibrary
 
 *** Variables ***
 ${BROWSER}        chrome
@@ -12,6 +12,7 @@ ${BROWSER}        chrome
 *** Test Cases ***
 Login smoke test
     [Setup]    Go to page    LoginPage
+    sleep    1
     Login as a normal user
     The current page should be    HomePage
 

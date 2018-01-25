@@ -1,0 +1,5 @@
+---
+LoginPage:
+  username: id_username
+  password: id_password
+  submit_button: id_submit

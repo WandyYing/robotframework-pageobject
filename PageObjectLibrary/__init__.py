@@ -1,6 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 from .keywords import PageObjectLibraryKeywords
 from .pageobject import PageObject
+from .fetchyaml import FetchYaml
 from .version import __version__
 
 class PageObjectLibrary(PageObjectLibraryKeywords):
@@ -24,7 +25,7 @@ class PageObjectLibrary(PageObjectLibraryKeywords):
     | The current page should be | Assert that the given page is displayed in the browser |
     | Get page name              | Returns the name of the current page |
 
-    PageObjectLibrary provides a PageObject class which should be used
+    PageObjectLibrary provides a PageObjectLibrary class which should be used
     as the base class for other page objects. By inheriting from this
     class your keywords have access to the following pre-defined
     attributes and methods:
@@ -56,7 +57,7 @@ class PageObjectLibrary(PageObjectLibraryKeywords):
 
     = Creating Page Object Classes =
 
-    Page objects should inherit from PageObjectLibrary.PageObject. At a minimum,
+    Page objects should inherit from PageObjectLibrary.PageObjectLibrary. At a minimum,
     the class should define the following attributes:
 
     | =Attribute= | =Description= |
@@ -81,7 +82,7 @@ class PageObjectLibrary(PageObjectLibraryKeywords):
     = Locators =
 
     When writing multiple keywords for a page, you often use the same locators in
-    many places. PageObject allows you to define your locators in a dictionary,
+    many places. PageObjectLibrary allows you to define your locators in a dictionary,
     but them use them with a more convenient dot notation.
 
     To define locators, create a dictionary named ``_locators``. You can then access
@@ -91,17 +92,17 @@ class PageObjectLibrary(PageObjectLibraryKeywords):
     = Waiting for a Page to be Ready =
 
     One difficulty with writing Selenium tests is knowing when a page has refreshed.
-    PageObject provides a context manager named ``_wait_for_page_refresh()`` which can
+    PageObjectLibrary provides a context manager named ``_wait_for_page_refresh()`` which can
     be used to wrap a command that should result in a page refresh. It will get a
     reference to the DOM, run the body of the context manager, and then wait for the
     DOM to change before returning.
 
     = Example Page Object Definition =
 
-    | from PageObjectLibrary import PageObject
+    | from PageObjectLibrary import PageObjectLibrary
     | from robot.libraries.BuiltIn import BuiltIn
     |
-    | class LoginPage(PageObject):
+    | class LoginPage(PageObjectLibrary):
     |     PAGE_TITLE = "Login - PageObjectLibrary Demo"
     |     PAGE_URL = "/"
     |

@@ -2,7 +2,7 @@
 # in rfhub/version.py and then run 'python setup.py sdist upload'
 from setuptools import setup
 
-execfile('PageObject/version.py')
+execfile('PageObjectLibrary/version.py')
 
 setup(
     name             = 'robotframework-pageobject',
@@ -28,7 +28,7 @@ setup(
         "Intended Audience :: Developers",
         ],
     packages         =[
-        'PageObject',
+        'PageObjectLibrary',
     ],
     scripts          =[], 
 )

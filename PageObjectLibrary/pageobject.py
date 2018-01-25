@@ -1,5 +1,6 @@
 from __future__ import absolute_import, unicode_literals
 import robot.api
+import os
 from robot.libraries.BuiltIn import BuiltIn
 from contextlib import contextmanager
 from selenium.webdriver.support.ui import WebDriverWait
