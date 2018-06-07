@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
 # N.B. to push a new version to PyPi, update the version number
 # in rfhub/version.py and then run 'python setup.py sdist upload'
 from setuptools import setup
 
-execfile('PageObjectLibrary/version.py')
+exec(open('PageObjectLibrary/version.py').read())
 
 setup(
     name             = 'robotframework-pageobject',
@@ -13,7 +14,7 @@ setup(
     keywords         = 'robotframework',
     license          = 'Apache License 2.0',
     description      = 'RobotFramework library that implements the Page Object pattern',
-    long_description = open('README.md').read(),
+    long_description = open('README.md', encoding='utf-8').read(),
     zip_safe         = True,
     include_package_data = True,
     install_requires = ['robotframework', 'robotframework-seleniumlibrary', 'selenium', 'six'],

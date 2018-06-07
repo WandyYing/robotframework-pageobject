@@ -1,7 +1,7 @@
 import os
 from PageObjectLibrary import PageObject
 from robot.libraries.BuiltIn import BuiltIn
-from PageObjectLibrary import FetchYaml
+from .fetchyaml import FetchYaml
 
 
 class LoginPage(PageObject):

@@ -52,6 +52,7 @@ class PageObject(six.with_metaclass(ABCMeta, object)):
         self.logger = robot.api.logger
         self.locator = LocatorMap(getattr(self, "_locators", {}))
 
+
     # N.B. selib, browser use @property so that a
     # subclass can be instantiated outside of the context of a running
     # test (eg: by libdoc, robotframework-hub, etc)

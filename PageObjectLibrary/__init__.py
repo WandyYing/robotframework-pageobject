@@ -1,7 +1,6 @@
 from __future__ import absolute_import, unicode_literals
 from .keywords import PageObjectLibraryKeywords
 from .pageobject import PageObject
-from .fetchyaml import FetchYaml
 from .version import __version__
 
 class PageObjectLibrary(PageObjectLibraryKeywords):
