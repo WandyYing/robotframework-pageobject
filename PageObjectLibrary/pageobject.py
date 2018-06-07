@@ -30,7 +30,7 @@ class PageObject(six.with_metaclass(ABCMeta, object)):
     Classes that inherit from this class have access to the
     following properties:
 
-    * selib    a reference to an instance of SeleniumLibraryExtension
+    * selib    a reference to an instance of SeleniumLibrary
     * browser   a reference to the current webdriver instance
     * logger    a reference to robot.api.logger
     * locator   a wrapper around the page object's ``_locators`` dictionary 
@@ -58,7 +58,7 @@ class PageObject(six.with_metaclass(ABCMeta, object)):
     # test (eg: by libdoc, robotframework-hub, etc)
     @property
     def selib(self):
-        return BuiltIn().get_library_instance("SeleniumLibraryExtension")
+        return BuiltIn().get_library_instance("SeleniumLibrary")
 
     @property
     def browser(self):

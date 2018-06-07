@@ -13,7 +13,7 @@ class PageObjectLibrary(PageObjectLibraryKeywords):
     the page object pattern with
     [http://robotframework.org/SeleniumLibrary/doc/SeleniumLibrary.html|SeleniumLibrary].
     This library does not replace SeleniumLibrary; rather, it
-    provides a framework around which to use SeleniumLibraryExtension and the
+    provides a framework around which to use SeleniumLibrary and the
     lower-level [http://selenium-python.readthedocs.org/|Python
     bindings to Selenium]
 
@@ -36,7 +36,7 @@ class PageObjectLibrary(PageObjectLibraryKeywords):
     | ``self.logger``  | A reference to the ``robot.api.logger`` instance     |
     | ``self._wait_for_page_refresh()`` | a context manager for doing work that causes a page refresh   |
 
-    = Using SeleniumLibraryExtension Keywords =
+    = Using SeleniumLibrary Keywords =
 
     Within your keywords you have access to the full power of
     SeleniumLibrary. You can use ``self.selib`` to access the
@@ -135,7 +135,7 @@ class PageObjectLibrary(PageObjectLibraryKeywords):
 
     | ``*** Settings ***``
     | Library           PageObjectLibrary
-    | Library           SeleniumLibraryExtension
+    | Library           SeleniumLibrary
     | Suite Setup       Open browser        http://www.example.com
     | Suite Teardown    Close all browsers
     | 

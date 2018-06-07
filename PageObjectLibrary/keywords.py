@@ -30,11 +30,11 @@ class PageObjectLibraryKeywords(object):
         # can be imported outside the context of a running
         # suite (ie: by libdoc, robotframework-hub, etc)
         try:
-            se2 = self.builtin.get_library_instance("SeleniumLibraryExtension")
+            se2 = self.builtin.get_library_instance("SeleniumLibrary")
 
         except RuntimeError:
-            self.builtin.import_library("SeleniumLibraryExtension")
-            se2 = self.builtin.get_library_instance("SeleniumLibraryExtension")
+            self.builtin.import_library("SeleniumLibrary")
+            se2 = self.builtin.get_library_instance("SeleniumLibrary")
 
         return se2
 
@@ -90,7 +90,7 @@ class PageObjectLibraryKeywords(object):
         The effect is the same as if you had called the following three
         keywords:
 
-        | SeleniumLibraryExtension.Go To      http://www.example.com/login
+        | SeleniumLibrary.Go To      http://www.example.com/login
         | Import Library              ExampleLoginPage
         | Set Library Search Order    ExampleLoginPage
 
